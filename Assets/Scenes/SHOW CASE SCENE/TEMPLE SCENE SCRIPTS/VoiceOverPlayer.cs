@@ -7,7 +7,6 @@ public class VoiceOverPlayer : MonoBehaviour
 {
     [Header("Voice over")]
     public AudioClip voiceOverClip;
-    //public GameObject panel;
 
     [Header("Input actions")]
     public InputActionProperty leftHandVoiceInputAction;
@@ -20,17 +19,27 @@ public class VoiceOverPlayer : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    #region Voice Over play Functionality
-    public void EnableHologramAndPlayInstruction()
+    public void OnTriggerEnter()
     {
-        if (leftHandVoiceInputAction.action.WasPressedThisFrame())
+        PlayVoiceOver();
+    }
+
+    public void OnTriggerExit()
+    {
+        StopVoiceOver();
+    }
+
+    #region Voice Over play Functionality
+    public void PlayVoiceOver()
+    {
+        if (leftHandVoiceInputAction.action.WasPressedThisFrame() && rightHandVoiceInputAction.action.WasReleasedThisFrame())
         {
             audioManager.voiceClipPlayFunction(voiceOverClip);
         }
     }
-    public void DisableHologramAndStopInstruction()
+    public void StopVoiceOver()
     {
-        if (leftHandVoiceInputAction.action.WasReleasedThisFrame())
+        if (leftHandVoiceInputAction.action.WasReleasedThisFrame() && rightHandVoiceInputAction.action.WasReleasedThisFrame())
         {
             audioManager.voiceClipStopFunction();
 

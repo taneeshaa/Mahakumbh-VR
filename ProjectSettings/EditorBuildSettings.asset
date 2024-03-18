@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Panic_Attack.unity
     guid: 5af891d1e84e25e48bdf973919d51b51
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Electric_s.unity
     guid: 33472d5e6e38d564ab0be822d822b503
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Aasthma 2.unity
     guid: f2981aa71b3fd8d448ba4fcb24c9ea10
   m_configObjects:

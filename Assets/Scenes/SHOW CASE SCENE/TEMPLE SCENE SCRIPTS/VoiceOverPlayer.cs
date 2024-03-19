@@ -19,16 +19,25 @@ public class VoiceOverPlayer : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    public void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        PlayVoiceOver();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("entered");
+            PlayVoiceOver();
+        }
     }
 
-    public void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
-        StopVoiceOver();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("exited");
+            StopVoiceOver();
+        }
     }
 
+    
     #region Voice Over play Functionality
     public void PlayVoiceOver()
     {

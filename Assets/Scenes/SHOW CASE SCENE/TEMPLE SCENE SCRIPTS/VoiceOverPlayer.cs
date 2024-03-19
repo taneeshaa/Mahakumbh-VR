@@ -37,23 +37,16 @@ public class VoiceOverPlayer : MonoBehaviour
         }
     }
 
-    
+
     #region Voice Over play Functionality
     public void PlayVoiceOver()
     {
-        if (leftHandVoiceInputAction.action.WasPressedThisFrame() && rightHandVoiceInputAction.action.WasReleasedThisFrame())
-        {
-            audioManager.voiceClipPlayFunction(voiceOverClip);
-        }
+        audioManager.voiceClipPlayFunction(voiceOverClip);
     }
     public void StopVoiceOver()
     {
-        if (leftHandVoiceInputAction.action.WasReleasedThisFrame() && rightHandVoiceInputAction.action.WasReleasedThisFrame())
-        {
-            audioManager.voiceClipStopFunction();
-
-        }
+        audioManager.voiceClipStopFunction();
     }
-    #endregion
+    #endregion
 
 }

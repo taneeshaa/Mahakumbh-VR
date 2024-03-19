@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Michsky.UI.Heat;
+//using Michsky.UI.Heat;
 
 public class Timer : MonoBehaviour , IPointerClickHandler 
 
